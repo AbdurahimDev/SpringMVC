@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Save Or Edit Page</title>
+</head>
+<body>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <form th:action="@{'/book/saveOrEdit'}" method="POST" th:object="${book}">
+        <input th:value="${book.id}" type="text" name="id" style="display:none">
+        <input th:value="${book.title}" type="text" name="title">
+        <input th:value="${book.author}" type="text" name="author">
+        <input th:value="${book.price}" type="number" name="price">
+        <button type="submit">Save</button>
+      </form>
+    </div>
+  </div>
+</div>
+</body>
+</html>
